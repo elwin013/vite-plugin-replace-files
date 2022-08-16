@@ -12,6 +12,8 @@ npm install -D vite-plugin-replace-files
 
 ## Usage
 
+> This plugin should go _before_ any other stuff in `plugins` array, so all other plugins that runs later could e.g. apply optimisations.
+
 Add to `vite.config.ts` - example below will replace file `src/env.ts` with file `conf/env.ts`:
 
 ```ts
