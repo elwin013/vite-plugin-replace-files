@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-replace-files",
+  "version": "1.0.0",
+  "description": "Replace files during Vite build - handy when replacing strings is not enough",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://@github.com:elwin013/vite-plugin-replace-files.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elwin013/vite-plugin-replace-files/issues"
+  },
+  "homepage": "https://github.com/elwin013/vite-plugin-replace-files#readme",
+  "scripts": {
+    "build": "tsc -p . --outDir dist/esm && tsc -p . --module commonjs --outDir dist/cjs"
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "keywords": [
+    "vite-plugin"
+  ],
+  "author": "Kamil Banach <kontakt@elwin013.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "vite": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.4",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.0"
+  }
+}
