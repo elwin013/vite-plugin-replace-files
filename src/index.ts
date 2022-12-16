@@ -19,9 +19,14 @@ const replaceFiles = (replacements?: Replacement[]): PluginOption => {
   return {
     name: "vite-plugin-replace-files",
     enforce: "pre",
-    async resolveId(source: string, importer: string | undefined) {
+    async resolveId(
+      source: string,
+      importer: string | undefined,
+      options: any
+    ) {
       const resolvedFile = await this.resolve(source, importer, {
-        skipSelf: true,
+        ...options,
+        ...{ skipSelf: true },
       });
 
       const foundReplacementFile = replacements?.find(
