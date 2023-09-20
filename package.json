@@ -3,9 +3,9 @@
   "version": "1.0.2",
   "description": "Replace files during Vite build - handy when replacing strings is not enough",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/esm/index.mjs",
   "exports": {
-    "import": "./dist/esm/index.js",
+    "import": "./dist/esm/index.mjs",
     "require": "./dist/cjs/index.js"
   },
   "repository": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/elwin013/vite-plugin-replace-files#readme",
   "scripts": {
-    "build": "tsc -p . --outDir dist/esm && tsc -p . --module commonjs --outDir dist/cjs"
+    "build": "tsc -p . --outDir dist/esm && mv dist/esm/index.js dist/esm/index.mjs && tsc -p . --module commonjs --outDir dist/cjs"
   },
   "files": [
     "dist/**/*",
