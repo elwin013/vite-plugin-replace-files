@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-replace-files",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Replace files during Vite build - handy when replacing strings is not enough",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
