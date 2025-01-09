@@ -11,8 +11,8 @@ const replaceFiles = (replacements?: Replacement[]): PluginOption => {
   replacements = replacements?.map(
     (x) =>
       <Replacement>{
-        file: path.join(projectRoot, x.file),
-        replacement: path.join(projectRoot, x.replacement),
+        file: path.normalize(path.join(projectRoot, x.file)),
+        replacement: path.normalize(path.join(projectRoot, x.replacement)),
       }
   );
 
@@ -29,8 +29,14 @@ const replaceFiles = (replacements?: Replacement[]): PluginOption => {
         ...{ skipSelf: true },
       });
 
+      if (!resolvedFile) {
+        return null;
+      }
+
+      const resolvedFileId = path.normalize(resolvedFile?.id);
+
       const foundReplacementFile = replacements?.find(
-        (replacement) => replacement.file == resolvedFile?.id
+        (replacement) => replacement.file == resolvedFileId
       );
 
       if (foundReplacementFile) {
