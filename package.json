@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/elwin013/vite-plugin-replace-files#readme",
   "scripts": {
-    "build": "tsc -p . --outDir dist/esm && mv dist/esm/index.js dist/esm/index.mjs && tsc -p . --module commonjs --outDir dist/cjs"
+    "build": "tsc -p . --outDir dist/esm && mv dist/esm/index.js dist/esm/index.mjs && tsc -p . --module commonjs --outDir dist/cjs",
+    "test": "vitest"
   },
   "files": [
     "dist/**/*",
