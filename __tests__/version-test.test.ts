@@ -5,7 +5,7 @@ afterAll(() => {
   execSync(`rm -rf __tests__/vite@*`);
 });
 
-test.each([["vite@3"], ["vite@4"], ["vite@5"], ["vite@6"], ["vite@7"]])(
+test.each([["vite@3"], ["vite@4"], ["vite@5"], ["vite@6"], ["vite@7"], ["vite@8"]])(
   "%s",
   (version) => {
     execSync(`cd __tests__ && pnpm dlx ${version} build --outDir ${version}`, {
